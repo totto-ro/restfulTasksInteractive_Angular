@@ -1,0 +1,31 @@
+<button (click) = "getAllTasks()">
+    Get all tasks
+</button>
+
+
+<ul>
+    <li *ngFor="let task of taskList" class="taskCard">
+        <p>Id: {{ task._id }}</p>
+        <p>Title: {{ task.title }}</p>
+        <p>Description: {{ task.description }}</p>
+        <p>Completed: {{ task.completed }}</p>
+        <a><button [id]="task._id" (click) = "OnShow($event)" >Show Details</button></a>
+        
+    </li>
+</ul>
+
+<ul *ngIf="showingTask">
+    <li class="taskCard">
+            <h1>Show task detail:</h1>
+            <h3>Task by ID: {{ taskById._id }}</h3>
+            <p>Title: {{ taskById.title }}</p>
+            <p>Description: {{ taskById.description }}</p>
+            <p>Completed: {{ taskById.completed }}</p>
+    </li>
+</ul> 
+
+
+
+
+
+
